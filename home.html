@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+ 
+ <style>
+.navbar-brand {
+	color: #fff;
+	font-size:160%;
+    font-family: 'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive;
+	font-weight:700;
+	letter-spacing:0.1em;
+	cursor:default;
+}
+.navbar-nav .nav-item .nav-link{
+	padding: 1.1em 1em!important;
+	font-size: 110%;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #fff;
+   font-family: 'Gothic A1', sans-serif;
+   cursor:pointer;
+}
+
+.input-group-text:focus , .input-group-text:active  {
+outline: none !important;
+   box-shadow: none;
+   cursor:pointer;}
+.form-control:focus , .form-control:active  {
+outline: none !important;
+   box-shadow: none;
+   border-color:rgb(200,200,200);
+   }
+
+
+
+footer{
+     background-color: #33383c;
+     padding:70px 0px;
+	 font-family:Helvetica;
+}	       
+
+footer ul li{
+    padding:5px 0px;
+	font-family:Helvetica;
+}
+
+.adress span , .contact span , .social span{
+   color: #FFF; 
+   font-weight: 800; 
+   padding-bottom: 10px; 
+   margin-bottom: 20px;
+   display: block;
+   text-transform: uppercase;
+   font-size: 120%;;
+   letter-spacing: 3px;
+}
+ 
+.adress li p , .contact li a , .social li a{
+    color:#FFF;
+    letter-spacing: 1px;
+    text-decoration:none;
+    font-size:15px;
+}
+
+.social li{
+    float:left;
+}
+
+.adress , .contact , .social {
+    list-style: none;
+}
+
+.fa{
+    color:#9c9c9c;
+    margin-right: 15px;
+    font-size:14px;
+}
+</style> 
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><span>E-</span>Barnatorja</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Feedback</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid " >
+    <div class="row">
+      <div class="col-sm-5 col-md-6 col-lg-4 " style="background-color:rgb(180,180,180);">
+	  <br>
+	  <h1 class="display-6" style="font-family: Helvetica;text-align:center;margin-top:5%;color:rgb(14, 33, 49);">Kerko per barnatoret ne Prishtine</h1>
+	  <p>
+	  <div class="input-group" style="margin-top:20%;margin-bottom:10%;">
+	 <input class="form-control " type="text" placeholder="Kerko..." style="width:70%;border-right-color:white;outline-color:white;">
+      <div class="input-group-append">
+        <button class="input-group-text" style="background-color:white;;"><img src="search.png" alt="Search" width="70%"></button>
+      </div>
+	  
+         </div>
+      </div>
+      <div class="col-sm-7 col-md-6 col-lg-8 " style="margin-left:-1%;">
+       <div id="map" style="width:103%;height:40.9em;"></div>
+
+<script>
+function Harta() {
+  var Vendi = new google.maps.LatLng(42.64840941942564,21.1671245098114); /*percaktimi i kordinatave per ne UP*/
+  var mapCanvas = document.getElementById("map");  /*Lidhja permes id me div elementin ne html qe perdoret per shfaqjen e hartes*/
+  var Opsionet = {center: Vendi, zoom: 18};    /*Percaktimi i disa karakterisikave per harte si zmadhimi 18*/
+  var map = new google.maps.Map(mapCanvas, Opsionet);
+  var marker = new google.maps.Marker({position:Vendi}); /*percaktimi i pozites se pikes qe na tregon vendin e zgjedhur permes funksionit latlong*/
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKxF6JLKEdy9qQhSFGUclftHAVs1oCTHc&callback=Harta"></script> <!-- thirrja e funksionit te hartes te rregulluar sipas nevojave tone duke perdorur api nga google dhe thirrjen me call-->
+
+      </div>
+    </div>
+	
+	<footer style="width:102%;margin-left:-1%;">
+ <div class="container" style="margin-bottom:-4%;" >
+   <div class="row">
+   
+            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                <ul class="adress">
+                     <span style="font-weight:normal;">Adress</span>    
+                     <li>
+                        <p>Prishtinë, Kosovë, 10000</p>
+                      </li>
+                           
+                      <li>
+                        <p>+38349280104</p>
+                      </li>
+                           
+                      <li>
+                        <p>brikena.ahmeti@outlook.com</p>
+                      </li>
+                 </ul>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <ul class="contact" >
+                     <span style="font-weight:normal;">Contact</span>    
+                     <li>
+                        <a href="#">Home</a>
+                      </li>
+                           
+                      <li>
+                         <a href="#">About</a>
+                      </li>   
+                      <li>
+                        <a href="#">Feedback</a>
+                     </li>
+                </ul>
+            </div>
+       
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+               <ul class="social">
+                          <span style="font-weight:normal;">Social</span>    
+                           <li>
+                                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                           </li>
+                          
+                           <li>
+                                <a href="#"><i class="fa fa-github fa-2x"></i></a>
+                           </li>
+                            
+                           <li>
+                                <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                           </li>
+                           
+                           <li>
+                                <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+                           </li>
+                            
+                           <li>
+                                <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                          </li>
+                          
+                 </ul>
+            </div>
+       
+       
+       </div> 
+    </div>
+</footer>
+</body>
+</html>
